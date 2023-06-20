@@ -9,6 +9,13 @@ let isFirstLoad = true;
 
 window.addEventListener("load", () => {
   document.body.innerHTML = localStorage.getItem(LOCAL_STORAGE_KEYS.NOTES);
+
+  const range = document.createRange();
+  const sel = window.getSelection();
+  range.selectNodeContents(document.body);
+  range.collapse(false);
+  sel.removeAllRanges();
+  sel.addRange(range);
   document.body.focus();
 });
 document.body.addEventListener("keydown", (e) => {
