@@ -37,7 +37,7 @@ const resizeObserver = new ResizeObserver((entries) => {
     return;
   }
   const [entry] = entries;
-  const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0];
+  const { inlineSize: width, blockSize: height } = entry.borderBoxSize[0];
 
   notePad.style.height = height;
   notePad.style.width = width;
