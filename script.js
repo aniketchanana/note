@@ -9,6 +9,7 @@ let isFirstLoad = true;
 
 window.addEventListener("load", () => {
   document.body.innerHTML = localStorage.getItem(LOCAL_STORAGE_KEYS.NOTES);
+  document.body.focus();
 });
 document.body.addEventListener("keydown", (e) => {
   localStorage.setItem(LOCAL_STORAGE_KEYS.NOTES, e.target.innerHTML);
